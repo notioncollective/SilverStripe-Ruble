@@ -1,19 +1,6 @@
 !!com.aptana.scripting.model.BundleElement
 author: Jonathan Wohl
 children:
-- !command
-  async: false
-  customProperties: null
-  displayName: Swap Case
-  input: [selection, word]
-  inputPath: null
-  keyBindingMap: null
-  outputPath: null
-  outputType: replace_selection
-  path: commands/commands.rb
-  runType: current_thread
-  scope: source
-  workingDirectoryType: UNDEFINED
 - !template
   async: false
   customProperties: null
@@ -42,49 +29,12 @@ children:
   runType: current_thread
   scope: null
   workingDirectoryType: UNDEFINED
-- !!com.aptana.scripting.model.MenuElement
-  children:
-  - children: &id001 []
-    commandName: Swap Case
-    customProperties: null
-    displayName: Swap Case
-    path: bundle.rb
-    scope: null
-  - children: *id001
-    commandName: Sample Snippet
-    customProperties: null
-    displayName: Sample Snippet
-    path: bundle.rb
-    scope: null
-  - children: *id001
-    commandName: '-'
-    customProperties: null
-    displayName: '-'
-    path: bundle.rb
-    scope: null
-  - children:
-    - children: *id001
-      commandName: Sample Snippet
-      customProperties: null
-      displayName: Sample Snippet
-      path: bundle.rb
-      scope: null
-    commandName: Sub Menu
-    customProperties: null
-    displayName: Sub Menu
-    path: bundle.rb
-    scope: null
-  commandName: SilverStripe
-  customProperties: null
-  displayName: SilverStripe
-  path: bundle.rb
-  scope: null
 - !!com.aptana.scripting.model.SnippetElement
   async: false
   customProperties:
     prefix_values: [ssif]
-  displayName: SilverStripe If
-  expansion: "<% if ${1:condition} %>\n    ${2:cursor}\n<% end_if %>"
+  displayName: if
+  expansion: "<% if ${1:Condition} %>\n    ${2:cursor}\n<% end_if %>"
   input: [none]
   inputPath: null
   keyBindingMap: null
@@ -98,8 +48,8 @@ children:
   async: false
   customProperties:
     prefix_values: [ssife]
-  displayName: SilverStripe If Else
-  expansion: "<% if ${1:condition} %>\n    ${2}\n<% else %>\n    ${3}\n<% end_if %>"
+  displayName: if/else
+  expansion: "<% if ${1:Condition} %>\n    ${2}\n<% else %>\n    ${3}\n<% end_if %>"
   input: [none]
   inputPath: null
   keyBindingMap: null
@@ -112,9 +62,9 @@ children:
 - !!com.aptana.scripting.model.SnippetElement
   async: false
   customProperties:
-    prefix_values: [ssc]
-  displayName: SilverStripe Control
-  expansion: "<% control ${1:iterable} %>\n    ${2:cursor}\n<% end_control %>"
+    prefix_values: [ssco]
+  displayName: control
+  expansion: "<% control ${1:Iterable} %>\n    ${2:cursor}\n<% end_control %>"
   input: [none]
   inputPath: null
   keyBindingMap: null
@@ -124,12 +74,121 @@ children:
   runType: current_thread
   scope: text.html.basic
   workingDirectoryType: UNDEFINED
-copyright: '(c) Copyright 2011 notioncollective.org. Distributed under MIT license.
+- !!com.aptana.scripting.model.SnippetElement
+  async: false
+  customProperties:
+    prefix_values: [ssin]
+  displayName: include
+  expansion: <% include ${1:TemplateName} %>
+  input: [none]
+  inputPath: null
+  keyBindingMap: null
+  outputPath: null
+  outputType: insert_as_snippet
+  path: snippets/snippets.rb
+  runType: current_thread
+  scope: text.html.basic
+  workingDirectoryType: UNDEFINED
+- !!com.aptana.scripting.model.SnippetElement
+  async: false
+  customProperties:
+    prefix_values: [sscb]
+  displayName: cacheblock
+  expansion: "<% cacheblock '${1:CacheBlockName}' %>\n    ${2:Cached Content}\n<%\
+    \ end_cacheblock %>"
+  input: [none]
+  inputPath: null
+  keyBindingMap: null
+  outputPath: null
+  outputType: insert_as_snippet
+  path: snippets/snippets.rb
+  runType: current_thread
+  scope: text.html.basic
+  workingDirectoryType: UNDEFINED
+- !!com.aptana.scripting.model.SnippetElement
+  async: false
+  customProperties:
+    prefix_values: [ssca]
+  displayName: cached
+  expansion: "<% cached '${1:CacheName}'  %>\n    ${2:Cached Content}\n<% end_cached\
+    \ %>"
+  input: [none]
+  inputPath: null
+  keyBindingMap: null
+  outputPath: null
+  outputType: insert_as_snippet
+  path: snippets/snippets.rb
+  runType: current_thread
+  scope: text.html.basic
+  workingDirectoryType: UNDEFINED
+- !!com.aptana.scripting.model.MenuElement
+  children:
+  - children:
+    - children: &id001 []
+      commandName: control
+      customProperties: null
+      displayName: control
+      path: bundle.rb
+      scope: null
+    - children: *id001
+      commandName: if
+      customProperties: null
+      displayName: if
+      path: bundle.rb
+      scope: null
+    - children: *id001
+      commandName: if/else
+      customProperties: null
+      displayName: if/else
+      path: bundle.rb
+      scope: null
+    - children: *id001
+      commandName: include
+      customProperties: null
+      displayName: include
+      path: bundle.rb
+      scope: null
+    - children: *id001
+      commandName: cacheblock
+      customProperties: null
+      displayName: cacheblock
+      path: bundle.rb
+      scope: null
+    - children: *id001
+      commandName: cached
+      customProperties: null
+      displayName: cached
+      path: bundle.rb
+      scope: null
+    commandName: Template Snippets
+    customProperties: null
+    displayName: Template Snippets
+    path: bundle.rb
+    scope: null
+  - children: *id001
+    commandName: '-'
+    customProperties: null
+    displayName: '-'
+    path: bundle.rb
+    scope: null
+  - children: *id001
+    commandName: Controller Snippets (coming soon?)
+    customProperties: null
+    displayName: Controller Snippets (coming soon?)
+    path: bundle.rb
+    scope: null
+  commandName: SilverStripe
+  customProperties: null
+  displayName: SilverStripe
+  path: bundle.rb
+  scope: null
+copyright: '(c) Copyright 2011 notioncollective.com. Distributed under MIT license.
 
   '
 customProperties: null
 decreaseIndentMarkers: {}
-description: 'Basic SilverStripe Bundle
+description: 'Basic SilverStripe Ruble - Adds useful Page and DataObject subclass
+  file templates, and some common template snippets.
 
   '
 displayName: SilverStripe
