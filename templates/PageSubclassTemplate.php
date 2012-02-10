@@ -32,6 +32,12 @@ class ${TM_NEW_FILE_BASENAME} extends Page {
 		// alter CMS fields here
 		return $fields;
 	}
+	
+	public function getCMSFields_forPopup() {
+		$fields = parent::getCMSFields();
+		// alter Popup CMS fields here
+		return $fields;
+	}
 }
 
 class ${TM_NEW_FILE_BASENAME}_Controller extends Page_Controller {
