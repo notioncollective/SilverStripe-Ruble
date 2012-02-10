@@ -1,24 +1,36 @@
 require 'ruble'
 
-template "SilverStripe Page Subclass" do |t|
-  t.filetype = "*.php"
-  t.invoke do |context|
-    ENV['TM_DATE'] = Time.now.strftime("%Y-%m-%d")
-    ENV['TM_YEAR'] = Time.now.strftime("%Y")
-    raw_contents = IO.read("#{ENV['TM_BUNDLE_PATH']}/templates/PageSubclassTemplate.php")
-    raw_contents.gsub(/\$\{([^}]*)\}/) {|match| ENV[match[2..-2]] }
-  end
-end
-
 template 'SilverStripe DataObject Subclass' do |t|
   t.filetype = "*.php"
-  t.invoke do |context|
-    ENV['TM_DATE'] = Time.now.strftime("%Y-%m-%d")
-    ENV['TM_YEAR'] = Time.now.strftime("%Y")
-    raw_contents = IO.read("#{ENV['TM_BUNDLE_PATH']}/templates/DataObjectSubclassTemplate.php")
-    raw_contents.gsub(/${([^}]*)}/) {|match| ENV[match[2..-2]] }
-  end
+  t.replace_parameters = true
+  t.location = "templates/DataObjectSubclassTemplate.php"
 end
+
+template 'SilverStripe ModelAdmin Subclass' do |t|
+  t.filetype = "*.php"
+  t.replace_parameters = true
+  t.location = "templates/ModelAdminSubclassTemplate.php"
+  # t.invoke do |context|
+    # ENV['TM_DATE'] = Time.now.strftime("%Y-%m-%d")
+    # ENV['TM_YEAR'] = Time.now.strftime("%Y")
+    # raw_contents = IO.read("#{ENV['TM_BUNDLE_PATH']}/templates/ModelAdminSubclassTemplate.php")
+    # raw_contents.gsub(/${([^}]*)}/) {|match| ENV[match[2..-2]] }
+  # end
+end
+
+template "SilverStripe Page Subclass" do |t|
+  t.filetype = "*.php"
+  t.replace_parameters = true
+  t.location = "templates/PageSubclassTemplate.php"
+  # t.invoke do |context|
+#     
+    # ENV['TM_DATE'] = Time.now.strftime("%Y-%m-%d")
+    # ENV['TM_YEAR'] = Time.now.strftime("%Y")
+    # raw_contents = IO.read("#{ENV['TM_BUNDLE_PATH']}/templates/PageSubclassTemplate.php")
+    # raw_contents.gsub(/\$\{([^}]*)\}/) {|match| ENV[match[2..-2]] }
+  # end
+end
+
 
 # project_template "Sample Project Template" do |t|
   # t.type = :web

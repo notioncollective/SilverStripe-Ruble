@@ -29,7 +29,7 @@ END
     menu.menu 'Controller Snippets (coming soon?)' do |sub_menu|
         
     end
-    
-
   end
+  ENV['TM_DATE'] = Time.now.strftime("%Y-%m-%d")
+  ENV['TM_YEAR'] = Time.now.strftime("%Y")
 end

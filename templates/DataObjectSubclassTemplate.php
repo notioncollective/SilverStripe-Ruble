@@ -1,7 +1,6 @@
-<php
-
+<?php
 /**
- * ${TM_NEW_FILE_BASENAME}
+ * ${TM_NEW_FILE_BASENAME} class
  *
  * Created by ${TM_FULLNAME} on ${TM_DATE}.
  * Copyright (c) ${TM_YEAR} All rights reserved.
