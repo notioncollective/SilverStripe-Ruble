@@ -27,6 +27,11 @@ class ${TM_NEW_FILE_BASENAME} extends Page {
 	static $allowed_children = array(
 	);
 
+	public function getCMSFields() {
+		$fields = parent::getCMSFields();
+		// alter CMS fields here
+		return $fields;
+	}
 }
 
 class ${TM_NEW_FILE_BASENAME}_Controller extends Page_Controller {
