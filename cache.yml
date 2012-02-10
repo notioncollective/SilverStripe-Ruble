@@ -1,0 +1,145 @@
+!!com.aptana.scripting.model.BundleElement
+author: Jonathan Wohl
+children:
+- !command
+  async: false
+  customProperties: null
+  displayName: Swap Case
+  input: [selection, word]
+  inputPath: null
+  keyBindingMap: null
+  outputPath: null
+  outputType: replace_selection
+  path: commands/commands.rb
+  runType: current_thread
+  scope: source
+  workingDirectoryType: UNDEFINED
+- !template
+  async: false
+  customProperties: null
+  displayName: SilverStripe Page Subclass
+  filetype: '*.php'
+  input: []
+  inputPath: null
+  keyBindingMap: null
+  outputPath: null
+  outputType: discard
+  path: templates/templates.rb
+  runType: current_thread
+  scope: null
+  workingDirectoryType: UNDEFINED
+- !template
+  async: false
+  customProperties: null
+  displayName: SilverStripe DataObject Subclass
+  filetype: '*.php'
+  input: []
+  inputPath: null
+  keyBindingMap: null
+  outputPath: null
+  outputType: discard
+  path: templates/templates.rb
+  runType: current_thread
+  scope: null
+  workingDirectoryType: UNDEFINED
+- !!com.aptana.scripting.model.MenuElement
+  children:
+  - children: &id001 []
+    commandName: Swap Case
+    customProperties: null
+    displayName: Swap Case
+    path: bundle.rb
+    scope: null
+  - children: *id001
+    commandName: Sample Snippet
+    customProperties: null
+    displayName: Sample Snippet
+    path: bundle.rb
+    scope: null
+  - children: *id001
+    commandName: '-'
+    customProperties: null
+    displayName: '-'
+    path: bundle.rb
+    scope: null
+  - children:
+    - children: *id001
+      commandName: Sample Snippet
+      customProperties: null
+      displayName: Sample Snippet
+      path: bundle.rb
+      scope: null
+    commandName: Sub Menu
+    customProperties: null
+    displayName: Sub Menu
+    path: bundle.rb
+    scope: null
+  commandName: SilverStripe
+  customProperties: null
+  displayName: SilverStripe
+  path: bundle.rb
+  scope: null
+- !!com.aptana.scripting.model.SnippetElement
+  async: false
+  customProperties:
+    prefix_values: [ssif]
+  displayName: SilverStripe If
+  expansion: "<% if ${1:condition} %>\n    ${2:cursor}\n<% end_if %>"
+  input: [none]
+  inputPath: null
+  keyBindingMap: null
+  outputPath: null
+  outputType: insert_as_snippet
+  path: snippets/snippets.rb
+  runType: current_thread
+  scope: text.html.basic
+  workingDirectoryType: UNDEFINED
+- !!com.aptana.scripting.model.SnippetElement
+  async: false
+  customProperties:
+    prefix_values: [ssife]
+  displayName: SilverStripe If Else
+  expansion: "<% if ${1:condition} %>\n    ${2}\n<% else %>\n    ${3}\n<% end_if %>"
+  input: [none]
+  inputPath: null
+  keyBindingMap: null
+  outputPath: null
+  outputType: insert_as_snippet
+  path: snippets/snippets.rb
+  runType: current_thread
+  scope: text.html.basic
+  workingDirectoryType: UNDEFINED
+- !!com.aptana.scripting.model.SnippetElement
+  async: false
+  customProperties:
+    prefix_values: [ssc]
+  displayName: SilverStripe Control
+  expansion: "<% control ${1:iterable} %>\n    ${2:cursor}\n<% end_control %>"
+  input: [none]
+  inputPath: null
+  keyBindingMap: null
+  outputPath: null
+  outputType: insert_as_snippet
+  path: snippets/snippets.rb
+  runType: current_thread
+  scope: text.html.basic
+  workingDirectoryType: UNDEFINED
+copyright: '(c) Copyright 2011 notioncollective.org. Distributed under MIT license.
+
+  '
+customProperties: null
+decreaseIndentMarkers: {}
+description: 'Basic SilverStripe Bundle
+
+  '
+displayName: SilverStripe
+fileTypeRegistry: {}
+fileTypes: []
+foldingStartMarkers: {}
+foldingStopMarkers: {}
+increaseIndentMarkers: {}
+license: null
+licenseUrl: null
+path: bundle.rb
+repository: null
+visible: true
