@@ -25,9 +25,9 @@ class ${TM_NEW_FILE_BASENAME} extends DataObject {
 	);
 	static $searchable_fields = array(
 	);
-	static $singular_name = '';
+	static $singular_name = '${TM_NEW_FILE_BASENAME}';
 
-	static $plural_name = '';
+	static $plural_name = '${TM_NEW_FILE_BASENAME}s';
 	
 	
 	// Methods
