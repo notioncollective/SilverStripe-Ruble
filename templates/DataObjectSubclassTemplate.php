@@ -29,6 +29,8 @@ class ${TM_NEW_FILE_BASENAME} extends DataObject {
 
 	static $plural_name = '${TM_NEW_FILE_BASENAME}s';
 	
+	// static $default_sort = 'LastEdited DESC'
+	
 	
 	// Methods
 	function requireDefaultRecords() {

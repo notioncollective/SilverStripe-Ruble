@@ -24,8 +24,7 @@ class ${TM_NEW_FILE_BASENAME} extends Page {
 	static $belongs_many_many = array(
 	);
  
-	static $allowed_children = array(
-	);
+	// static $allowed_children = array();
 
 	public function getCMSFields() {
 		$fields = parent::getCMSFields();
